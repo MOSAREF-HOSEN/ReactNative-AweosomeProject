@@ -1,20 +1,37 @@
+import { ApplicationProvider } from '@ui-kitten/components';
 import { StatusBar } from 'expo-status-bar';
-import { StyleSheet, Text, View } from 'react-native';
+import * as eva from '@eva-design/eva';
+import { StyleSheet, Text, View, } from 'react-native';
+import { Header } from './components/Header';
+import { BackIcone } from './components/BackIcone';
 
 export default function App() {
   return (
+    <ApplicationProvider {...eva} theme={eva.light}>
+    
+  
     <View style={styles.container}>
-      <Text>Open up App.js to start working on your app!</Text>
       <StatusBar style="auto" />
+      <BackIcone></BackIcone>
+      <Text style={styles.heading}>My Frist Project</Text>
+      <Header></Header>
     </View>
+    </ApplicationProvider>
   );
 }
 
 const styles = StyleSheet.create({
   container: {
     flex: 1,
-    backgroundColor: '#fff',
-    alignItems: 'center',
-    justifyContent: 'center',
+    marginTop: 30
+    
+   
   },
+  heading: {
+    color: 'orange',
+    fontSize: 30,
+
+  },
+ 
+
 });
